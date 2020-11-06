@@ -55,10 +55,11 @@ Note that many column headers contain a colon (:). The function `rmcolon` replac
 
 ```{r}
 idb2 <- rmcolon(idbdata) # this function must be assigned to an object
-idb2
+head(idb2, 3)
 ```
 
 Now the data is ready for the `idigclean` function, which removes observations for which the species epithet is missing and creates a new variable for day of year: `doy`. Column headers are renamed to match the output of `gbiclean`.
+
 
 ```{r}
 idb_data <- idigclean(idb2)
@@ -67,7 +68,8 @@ idb_data
 
 Note that is function did not remove observations missing dates, so some further cleaning may be desirable. 
 
-#### Next Steps
+
+####Next Steps
 
 The two datasets are now formatted to be combined with `rbind()` if desired, and used to map occurrences.  
 
