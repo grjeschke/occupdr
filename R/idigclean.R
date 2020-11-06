@@ -5,12 +5,6 @@
 #' @return  smaller tbl_df
 #' @keywords  tidy, select
 #' @seealso [idigfread()] [rmcolon()]
-#' @importFrom dplyr %>%
-#' @importFrom dplyr filter
-#' @importFrom dplyr mutate
-#' @importFrom dplyr select
-#' @importFrom stringr str_to_sentence
-#' @importFrom stringr word
 #' @export
 #' @examples  
 #' idigclean(data)
@@ -19,7 +13,10 @@
 #' this function must be used after [rmcolon()]
 
 
-idigclean <- function(x){x %>%
+idigclean <- function(x){
+    require(dplyr) 
+    require(stringr)
+    x %>%
     dplyr::filter(!grepl(dwc.specificEpithet, pattern="[.,]"), 
            !is.na(dwc.specificEpithet), dwc.specificEpithet!="",
            dwc.specificEpithet!=" ") %>% 
