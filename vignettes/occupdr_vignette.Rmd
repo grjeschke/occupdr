@@ -1,0 +1,30 @@
+---
+title: "occupdr_vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{occupdr_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(occupdr)
+```
+
+To be continued
+
+
+**Data Sources**
+
+ GBIF.org (27 October 2020) GBIF Occurrence Download https://doi.org/10.15468 /dl.24n5p9
+
+http://www.idigbio.org/portal (2020),
+Query: {"filtered": {"filter": {"and": [{"query": {"match": {"_all": {"operator": "and", "query": "vanessa cardui"}}}}]}}},
+3427 records, accessed on 2020-10-27T19:38:47.660127

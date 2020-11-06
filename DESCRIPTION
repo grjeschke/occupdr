@@ -1,0 +1,27 @@
+Package: occupdr
+Title: Parses and Tidies Some Biodiversity Data
+Version: 0.0.0.9000
+Authors@R: 
+    c(person(given = "Vaughn",
+           family = "Shirey",
+           role = c("aut"),
+           email = "vms55@georgetown.edu",
+           comment = c(ORCID = "0000-0002-3589-9699")), person(given = "Grace",
+           family = "Jeschke",
+           role = c("aut", "cre"),
+           email = "grj14@georgetown.edu",
+           comment = c(ORCID = "0000-0001-6271-7750")))
+Description: The occurence records available through the Global Biodiversity Information Facility and iDigBio websites contain a lot of data. Functions within this package facilitate parsing csv files from these sources and simplifying the output to family and species, latitude and longitude, day of year and year. The output allows combination of data from both sources into a single data file.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+LazyData: true
+Imports: data.table, tidyverse
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
