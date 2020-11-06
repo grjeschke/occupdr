@@ -5,6 +5,10 @@
 #' @return  smaller tbl_df
 #' @keywords  tidy, select
 #' @seealso [idigfread()] [rmcolon()]
+#' @importFrom dplyr %>%
+#' @importFrom dplyr filter
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
 #' @export
 #' @examples  
 #' idigclean(data)

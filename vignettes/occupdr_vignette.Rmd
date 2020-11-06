@@ -1,5 +1,5 @@
 ---
-title: "occupdr Vignette"
+title: "occupdr vignette"
 author: Vaughn Shirey & Grace Jeschke
 output: rmarkdown::html_vignette
 vignette: >
@@ -13,6 +13,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+options(rmarkdown.html_vignette.check_title = FALSE)
 ```
 
 ```{r setup}
@@ -73,13 +74,14 @@ idb_data
 Note that is function did not remove observations missing dates, so some further cleaning may be desirable. 
 
 
-####Next Steps
+#### Next Steps
 
 The two datasets are now formatted to be combined with `rbind()` if desired, and used to map occurrences.  
 
 
-[^1]:Note: use of this package on a Mac may result in a warning message, but functionality should not be affected. See the data.table [installation wiki](https://github.com/Rdatatable/data.table/wiki/Installation) for more information
 
+
+[^1]:Note: use of this package on a Mac may result in a warning message, but functionality should not be affected. See the data.table [installation wiki](https://github.com/Rdatatable/data.table/wiki/Installation) for more information
 
 **Data Sources**
 

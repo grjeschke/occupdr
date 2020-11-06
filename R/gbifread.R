@@ -4,6 +4,7 @@
 #' @param  input a tab-delimited csv
 #' @return  tbl_df a tibble or dataframe
 #' @keywords  parse, tsv
+#' @importFrom data.table fread
 #' @export
 #' @examples 
 #' gbifread("tsvfilename.csv")

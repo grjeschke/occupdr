@@ -25,7 +25,8 @@ RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,
-    tidyverse
+    tidyverse,
+    testthat
 VignetteBuilder: knitr
 Depends: 
     R (>= 2.10)

@@ -6,12 +6,16 @@
 #' @return  smaller df or tbl
 #' @keywords  tidy, select
 #' @seealso [gbifread()]
+#' @importFrom dplyr %>%
+#' @importFrom dplyr filter
+#' @importFrom dplyr mutate
+#' @importFrom dplyr select
 #' @export
 #' @examples 
 #' gbiclean(data)
 
 
-gbiclean <- function(x){x %>% dplyr::filter(eventDate != "", !is.na(eventDate)) %>%
+gbiclean <- function(x){x %>% filter(eventDate != "", !is.na(eventDate)) %>%
         dplyr::filter(species != "", species != " ", !is.na(species)) %>%
         dplyr::mutate(doy = as.numeric(strftime(eventDate, format="%j"))) %>% 
         dplyr::mutate(family=str_to_sentence(family), 
