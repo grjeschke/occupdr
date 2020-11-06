@@ -1,12 +1,12 @@
-#' Read GBIF
+#' Read GBIF Raw Data
 #' 
-#' reads a csv file from GBIF.org
+#' reads a csv file from GBIF.org with [fread()]
 #' @param  input a tab-delimited csv
 #' @return  tbl_df a tibble or dataframe
 #' @keywords  parse, tsv
 #' @export
 #' @examples 
-#' gbifread() see vignette
+#' gbifread("tsvfilename.csv")
 
 
 

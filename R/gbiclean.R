@@ -8,14 +8,14 @@
 #' @seealso [gbifread()]
 #' @export
 #' @examples 
-#' gbiclean()
+#' gbiclean(data)
 
 
-gbiclean <- function(x){x %>% filter(eventDate != "", !is.na(eventDate)) %>%
-    filter(species != "", species != " ", !is.na(species)) %>%
-    mutate(doy = as.numeric(strftime(eventDate, format="%j"))) %>% 
-    mutate(family=str_to_sentence(family), 
+gbiclean <- function(x){x %>% dplyr::filter(eventDate != "", !is.na(eventDate)) %>%
+        dplyr::filter(species != "", species != " ", !is.na(species)) %>%
+        dplyr::mutate(doy = as.numeric(strftime(eventDate, format="%j"))) %>% 
+        dplyr::mutate(family=str_to_sentence(family), 
            species=str_to_sentence(species)) %>%
-    filter(basisOfRecord %in% c("HUMAN_OBSERVATION", "PRESERVED_SPECIMEN"))%>%
-    select(family, species, decimalLatitude, decimalLongitude, 
+        dplyr::filter(basisOfRecord %in% c("HUMAN_OBSERVATION", "PRESERVED_SPECIMEN"))%>%
+        dplyr::select(family, species, decimalLatitude, decimalLongitude, 
            basis=basisOfRecord, doy, year)}

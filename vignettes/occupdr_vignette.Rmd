@@ -1,5 +1,6 @@
 ---
-title: "occupdr_vignette"
+title: "occupdr Vignette"
+author: Vaughn Shirey & Grace Jeschke
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{occupdr_vignette}
@@ -17,13 +18,66 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(occupdr)
 ```
+#### Overview
+The occurrence records available through the Global Biodiversity Information Facility ([GBIF](www.gbif.org)) and [iDigBio](www.idigbio.org) contain a lot of data fields, some of which may be missing for your records of interest, or not relevent to your project. 
 
-To be continued
+Functions within `occupdr` facilitate parsing csv files from these sources and simplifying the output to family and species, latitude and longitude, day of year and year. The output allows combination of data from both sources into a single data file.
+
+The function `gbifread()` reads tab-delimited csv files such as those provided by GBIF, whereas `idigfread()` reads comma-delimited files such as those provided by iDigBio. Both functions incorporate the `fread` function from the package `data.table`, a package which has features parallelism [^1]. 
+
+#### Functions and data
+
+The included datasets are the output of the `fread` functions above. 
+
+```{r}
+gbidata
+```
+*Note that the " in column 1 is an artifact from creating the example file in MS Excel. It does not occur in data downloaded directly from GBIF*
+
+The function `gbiclean` removes observations for which the species epithet or the date is missing. It creates a new variable for day of year: `doy`, filters the basisOfRecord column for "HUMAN_OBSERVATION" and "PRESERVED_SPECIMEN" and renames it `basis`. Finally, seven variables are selected: `family` `species` `decimalLatitude` `decimalLongitude` `basis` `doy` `year`
+
+
+```{r}
+g_data <- gbiclean(gbidata)
+g_data
+```
+
+
+
+The process for data from iDigBio is very similar, with **one extra necessary step**.
+
+
+```{r}
+idbdata
+```
+
+Note that many column headers contain a colon (:). The function `rmcolon` replaces it with a period (.)
+
+```{r}
+idb2 <- rmcolon(idbdata) # this function must be assigned to an object
+idb2
+```
+
+Now the data is ready for the `idigclean` function, which removes observations for which the species epithet is missing and creates a new variable for day of year: `doy`. Column headers are renamed to match the output of `gbiclean`.
+
+```{r}
+idb_data <- idigclean(idb2)
+idb_data
+```
+
+Note that is function did not remove observations missing dates, so some further cleaning may be desirable. 
+
+#### Next Steps
+
+The two datasets are now formatted to be combined with `rbind()` if desired, and used to map occurrences.  
+
+
+[^1]:Note: use of this package on a Mac may result in a warning message, but functionality should not be affected. See the data.table [installation wiki](https://github.com/Rdatatable/data.table/wiki/Installation) for more information
 
 
 **Data Sources**
 
- GBIF.org (27 October 2020) GBIF Occurrence Download https://doi.org/10.15468 /dl.24n5p9
+http://GBIF.org (27 October 2020) GBIF Occurrence Download https://doi.org/10.15468/dl.24n5p9
 
 http://www.idigbio.org/portal (2020),
 Query: {"filtered": {"filter": {"and": [{"query": {"match": {"_all": {"operator": "and", "query": "vanessa cardui"}}}}]}}},

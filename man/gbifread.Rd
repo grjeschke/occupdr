@@ -2,7 +2,7 @@
 % Please edit documentation in R/gbifread.R
 \name{gbifread}
 \alias{gbifread}
-\title{Read GBIF}
+\title{Read GBIF Raw Data}
 \usage{
 gbifread(x)
 }
@@ -13,10 +13,10 @@ gbifread(x)
 tbl_df a tibble or dataframe
 }
 \description{
-reads a csv file from GBIF.org
+reads a csv file from GBIF.org with \code{\link[=fread]{fread()}}
 }
 \examples{
-gbifread() see vignette
+gbifread("tsvfilename.csv")
 }
 \keyword{parse,}
 \keyword{tsv}

@@ -2,7 +2,7 @@
 % Please edit documentation in R/idigfread.r
 \name{idigfread}
 \alias{idigfread}
-\title{Read iDigBio}
+\title{Read iDigBio Raw Data}
 \usage{
 idigfread(x)
 }
@@ -12,10 +12,10 @@ idigfread(x)
 \item{output}{tb df a tibble or dataframe}
 }
 \description{
-reads a csv file from iDigBio.org
+reads a csv file from iDigBio.org with \code{\link[=fread]{fread()}}
 }
 \examples{
-idigfread() 
+idigfread("filename.csv") 
 }
 \keyword{csv}
 \keyword{parse,}

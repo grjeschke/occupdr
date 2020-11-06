@@ -2,7 +2,7 @@
 % Please edit documentation in R/idigclean.R
 \name{idigclean}
 \alias{idigclean}
-\title{Clean iDigBio Data}
+\title{Clean iDigBionData}
 \usage{
 idigclean(x)
 }
@@ -21,7 +21,7 @@ this function must be used after \code{\link[=rmcolon]{rmcolon()}}
 
 \examples{
  
-idigclean()
+idigclean(data)
 
 }
 \seealso{

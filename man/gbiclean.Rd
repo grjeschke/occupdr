@@ -16,7 +16,7 @@ smaller df or tbl
 tidies and selects some variables from GBIF.org data
 }
 \examples{
-gbiclean()
+gbiclean(data)
 }
 \seealso{
 \code{\link[=gbifread]{gbifread()}}
