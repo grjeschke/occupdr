@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(occupdr)
 ```
+
+
 #### Overview
 The occurrence records available through the Global Biodiversity Information Facility ([GBIF](www.gbif.org)) and [iDigBio](www.idigbio.org) contain a lot of data fields, some of which may be missing for your records of interest, or not relevent to your project. 
 
@@ -64,6 +66,8 @@ Now the data is ready for the `idigclean` function, which removes observations f
 ```{r}
 idb_data <- idigclean(idb2)
 idb_data
+
+# Warning: This function may trigger an error message if used on data modified in MS Excel. 
 ```
 
 Note that is function did not remove observations missing dates, so some further cleaning may be desirable. 
