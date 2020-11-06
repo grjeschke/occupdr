@@ -9,14 +9,14 @@
 #' @importFrom dplyr filter
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
+#' @importFrom stringr str_to_sentence
+#' @importFrom stringr word
 #' @export
 #' @examples  
 #' idigclean(data)
 #' 
 #' @details  # Warning: 
 #' this function must be used after [rmcolon()]
-
-
 
 
 idigclean <- function(x){x %>%

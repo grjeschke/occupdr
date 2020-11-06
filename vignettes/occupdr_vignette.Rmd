@@ -1,5 +1,5 @@
 ---
-title: "occupdr vignette"
+title: "occupdr_vignette"
 author: Vaughn Shirey & Grace Jeschke
 output: rmarkdown::html_vignette
 vignette: >
@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
-options(rmarkdown.html_vignette.check_title = FALSE)
+
 ```
 
 ```{r setup}

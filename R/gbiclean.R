@@ -10,6 +10,7 @@
 #' @importFrom dplyr filter
 #' @importFrom dplyr mutate
 #' @importFrom dplyr select
+#' @importFrom stringr str_to_sentence
 #' @export
 #' @examples 
 #' gbiclean(data)

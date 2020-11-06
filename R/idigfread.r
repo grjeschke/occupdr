@@ -3,8 +3,8 @@
 #' reads a csv file from iDigBio.org with [fread()]
 #' @param input a comma-delimited csv
 #' @param output tb df a tibble or dataframe
-#' @keywords parse, csv
 #' @importFrom data.table fread
+#' @keywords parse, csv
 #' @export
 #' @examples
 #' idigfread("filename.csv") 
